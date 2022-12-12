@@ -268,4 +268,61 @@ void main(){
         }
     }
 }
+
+// maximum element in array 
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+void main(){
+    int n,i=0,max=0;
+    int arr[n];
+    printf("Enter the number of elements in the array");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++){
+        if(max<arr[i]){
+            max=arr[i];
+        }
+    }
+    printf("The maximum element in the array is %d",max);
+}
+
+//Bubble Sort 
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+void main(){ 
+       int n,i=0,c=0,temp=0;
+       int arr[n];
+       printf("Enter the number of elements in the array");
+       scanf("%d",&n);
+       for(i=0;i<n;i++){
+           scanf("%d",&arr[i]);
+       }
+       printf("The unsorted initial array is");
+       for(i=0;i<n;i++){
+          printf("%d",arr[i]);
+       }
+       for(c=0;c<n-1;c++){
+           for(i=0;c<n-i-1;c++){
+            if(arr[i]>arr[i+1]){
+                  temp=arr[i];
+                  arr[i]=arr[i+1];
+                  arr[i+1]=temp;
+            }
+           }
+       }
+       printf("The sorted array  is");
+       for(i=0;i<n;i++){
+        printf("%d",arr[i]);
+       }
+       }
 */
+
