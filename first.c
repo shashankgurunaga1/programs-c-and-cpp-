@@ -324,5 +324,86 @@ void main(){
         printf("%d",arr[i]);
        }
        }
-*/
 
+
+//Largest of three numbers using pointers
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+void main(){
+    int *max,a,b,c;
+    printf("Enter the three numbers");
+    scanf("%d %d %d",&a,&b,&c);
+    if((a>b)){
+        if(b>c){
+            max=&a;
+        }
+        
+    }
+    else if(b>a){
+             if(c>b){
+                max=&c;
+             }
+             else if(a>c){
+                max=&b;
+             }
+    }
+    else if(b>c){
+        if(c>a){
+            max=&b;
+        }
+    }
+    printf("The maximum number out of the three is %d",*max);
+}
+
+// binary to decimal //
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+void main(){
+    int bin,rem=0,dec=0,temp=0,temp1=0;
+    printf("Enter the binary format to be coded to decimal form");
+    scanf("%d",&bin);
+    temp=bin;
+    while(bin!=0){
+           rem=bin%10;
+           dec+=rem*pow(2,temp1);
+           bin=bin/10;
+           temp1++;
+    }
+    printf("The decimal form of %d is %d",temp,dec);
+}
+
+*/
+//permutation //
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+int fact(int n){
+    
+    if(n==0){
+        return 1;
+    }
+    
+    else{
+     return(n*fact(n-1));
+    }
+}
+void main(){
+    int n,r,npr;
+    printf("Enter the number for permutation");
+    scanf("%d",&n);
+    printf("Enter the  value of r");
+    scanf("%d",&r);
+    npr=fact(n)/fact(n-r);
+    printf("The value of npr is %d for the numbers %d,%d",npr,n,r);
+
+}
