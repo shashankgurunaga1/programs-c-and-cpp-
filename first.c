@@ -1,5 +1,5 @@
 
-/*
+/* @Author:Shashank Gurunaga
 
 #include<stdio.h>
 int main(){
