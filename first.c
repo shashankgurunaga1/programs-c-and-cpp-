@@ -714,7 +714,7 @@ void main(){
     getch();
 
 }
-*/
+
 //selection sort//
 #include<stdio.h>
 #include<stdlib.h>
@@ -747,4 +747,5 @@ void main(){
 
    
 }
+*/
 
