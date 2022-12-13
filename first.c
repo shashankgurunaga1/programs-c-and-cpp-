@@ -1,6 +1,5 @@
 
 /*
-@Author: Shashank Gurunaga
 
 #include<stdio.h>
 int main(){
@@ -407,5 +406,103 @@ void main(){
     npr=fact(n)/fact(n-r);
     printf("The value of npr is %d for the numbers %d,%d",npr,n,r);
 
+}
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+union employee
+{
+int id;
+char name[20];
+}e1;
+int main(int argc, char *argv[])
+{
+
+e1.id = 10;
+
+strcpy(e1.name,"Pritesh");
+e1.id = 20;
+
+printf("\nID : %d",e1.id);
+printf("\nName : %s",e1.name);
+return 0;
+}
+
+// question 1 //
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+
+struct employee{
+    char name[20];
+    int wage;
+    int wdays;
+}e1;
+int main(){
+    scanf("%s",&e1.name);
+    scanf("%d",&e1.wage);
+    scanf("%d",&e1.wdays);
+    printf("Name of the employee: %s \n",e1.name);
+    printf("Wage of the employee: %d \n",e1.wage);
+    printf("Working days of the employee: %d \n",e1.wdays);
+}
+
+//question 2//
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<math.h>
+#include<string.h>
+
+struct employee{
+    char name[20];
+    int wage;
+    int wdays;
+}e1[2];
+int main(){
+    int i=0;
+    for(i=0;i<2;i++){
+    scanf("%s",&e1[i].name);
+    scanf("%d",&e1[i].wage);
+    scanf("%d",&e1[i].wdays);
+
+    }
+    for(i=0;i<2;i++){
+        printf("Employee %d \n",i+1);
+        printf("Name of the employee: %s \n",e1[i].name);
+        printf("Wage of the employee: %d \n",e1[i].wage);
+        printf("Working days of the employee: %d \n",e1[i].wdays);
+    }
+}
+
+//question 3//
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+struct employee{
+     int eno;
+     char ename[20];
+     int salary;
+}emp[100];
+
+void main(){
+    int n,i=0;
+    printf("Enter the number of employees");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%d",&emp[i].eno);
+        scanf("%s",&emp[i].ename);
+        scanf("%d",&emp[i].salary);
+    }
+    for(i=0;i<n;i++){
+        printf("Employee %d \n",i+1);
+        printf("Id of the employee: %d \n",emp[i].eno);
+        printf("Name of the employee: %s \n",emp[i].ename);
+        printf("Salary of the employee: %d \n",emp[i].salary);
+    }
 }
 */
