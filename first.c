@@ -505,4 +505,246 @@ void main(){
         printf("Salary of the employee: %d \n",emp[i].salary);
     }
 }
+
+//question 4//
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[]) // command line arguments
+{
+if(argc!=5)
+{
+printf("Arguments passed through command line " \
+"not equal to 5");
+return 1;
+}
+
+
+printf("\n Program name : %s \n", argv[0]);
+printf("1st arg : %s \n", argv[1]);
+printf("2nd arg : %s \n", argv[2]);
+printf("3rd arg : %s \n", argv[3]);
+printf("4th arg : %s \n", argv[4]);
+printf("5th arg : %s \n", argv[5]);
+
+return 0;
+}
+
+
+//reading the first line in a file//
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+int main(){
+    char c[1000];
+    FILE *fptr;
+    if ((fptr = fopen("program.txt", "r")) == NULL) {
+        printf("File cannot be opened");
+        exit(1);
+    }
+    fscanf(fptr,"%[^\n]", c);
+    printf("Data from the file:\n%s", c);
+    fclose(fptr);
+
+    return 0;
+}
+
+//writing into the file
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+int main(){
+    char ch[1000];
+    FILE *fptr;
+    fptr = fopen("program1.txt", "w");
+    if (fptr == NULL) {
+        printf("File cannot be opened");
+        exit(1);
+    }
+    printf("Enter the text you want to put into the file");
+    fgets(ch,sizeof(ch),stdin);
+    printf("%s",ch);
+    fclose(fptr);
+    return 0;
+}
+
+//Selection sort
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+
+    return 0;
+}
+
+#include<stdio.h>
+int main(){
+    int i=3;
+    int j=i++;
+ printf("i=%d j=%d \n",i,j);
+    i=3;
+    int k=++i;
+   
+    printf("i=%d k=%d",i,k);
+    return 0;
+}
+
+
+//Structure in a Structure//
+#include<stdio.h>
+#include<conio.h>
+struct Employee{
+    int emp_id;
+    char emp_name[20];
+    int salary;
+};
+struct Organisarion{
+    int org_id;
+    char org_name[20];
+    struct Employee emp[4];
+}org1;
+int main(){
+    int n,i=0;
+    printf("Enter the organiszation ID :");
+    scanf("%d",&org1.org_id);
+    printf("Enter the organization name :");
+    scanf("%s",&org1.org_name);
+    printf("Enter the number of employees");
+    scanf("%d",&n);
+    printf("Enter the employee datails ");
+    
+    for(i=0;i<n;i++){
+        printf("Enter the employee id");
+        scanf("%d",&org1.emp[i].emp_id);    
+        printf("Enter the employee name");
+        scanf("%s",&org1.emp[i].emp_name); 
+        printf("Enter the employee's salary");
+        scanf("%d",&org1.emp[i].salary); 
+
+    }
+    printf("Organisation Name=%s\n",org1.org_name);
+    printf("Organization Id=%d\n",org1.org_id);
+    for(i=0;i<n;i++){
+        printf("Employee %d\n",i+1);
+        printf("Employee ID=%d\n",org1.emp[i].emp_id);    
+        printf("Employee Name=%s\n",org1.emp[i].emp_name); 
+        printf("Employee's Salary=%d\n",org1.emp[i].salary); 
+
+    }
+    return 0;
+
+}
+
+//structure in function
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+
+struct Employee{
+    
+    char emp_name[100];
+    int days;
+    int salary;
+    float amount;
+};
+void getSalary(struct Employee *emp1,char *name,int day,int sal){
+    int totalsalary=1;
+    strcpy(emp1->emp_name,name);
+    emp1->days=day;
+    emp1->salary=sal;
+    emp1->amount=(float)((emp1->salary)*day);
+}
+int main(){
+    char name[50];
+    int day;
+    int sal;
+    struct Employee emp1;
+    printf("Enter the name of the employee");
+    scanf("%s",name);
+    printf("Enter the number of days the employees worked");
+    scanf("%d",&day);
+    printf("Enter the salary");
+    scanf("%d",&sal);
+    getSalary(&emp1,name,day,sal);
+    printf("%s received a salary of %f for %d days",emp1.emp_name,emp1.amount,emp1.days);
+
+
+    return 0;
+}
+
+
+// binary search //
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+void main(){
+    int n,arr[10],mid=0,low=0,high=0,flag=0,i=0,num=0;
+    printf("Enter the number of elements in the array");
+    scanf("%d",&n);
+    printf("Enter the elements into the array");
+    for(i=0;i<n;i++){
+    scanf("%d",&arr[i]);
+    }
+    low=0,high=n-1;
+    mid=(int)((low+high)/2);
+    printf("Enter the number to be searched");
+    scanf("%d",&num);
+    while(low<=high){
+        if(num==arr[mid]){
+           flag=1;
+           printf("Element %d found at position %d ",num,mid+1);
+           break;
+        }
+        else if(num<arr[mid]){
+                high=mid-1;
+        }
+        else{
+            low=mid+1;
+        }
+    }
+    getch();
+
+}
 */
+//selection sort//
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<string.h>
+#include<math.h>
+void main(){
+    int n,l,i,j,k,c;
+    int arr[n];
+    printf("Enter the number of elements in the array");
+    scanf("%d",&n);
+    printf("Enter the elements in the array");
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n-1;i++){
+        l=i;
+        for(j=i+1;j<n;j++){
+             if(arr[l]>arr[j]){
+                l=j;
+             }
+        }
+        int temp=arr[l];
+        arr[l]=arr[i];
+        arr[i]=temp;
+    }
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+
+   
+}
+
