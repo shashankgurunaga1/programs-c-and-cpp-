@@ -379,7 +379,7 @@ void main(){
     printf("The decimal form of %d is %d",temp,dec);
 }
 
-*/
+
 //permutation //
 #include<stdio.h>
 #include<conio.h>
@@ -407,3 +407,4 @@ void main(){
     printf("The value of npr is %d for the numbers %d,%d",npr,n,r);
 
 }
+*/
